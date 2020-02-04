@@ -24,14 +24,15 @@ if(!empty($name) && in_array($name, $_config->auth_repos))
               if(!empty($repo))
                   foreach($repo->users as $user)
                   {
+                    $branch = formatBranch($user->branch);
                       echo '
-                         <div class="col-lg-4 my-3">
+                         <div class="col-lg-4 my-3 mx-auto">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote mb-0">
                                 <img src="'.$user->avatar.'" width="75" height="75" class="rounded-circle float-left mr-4" alt="">
-                                <p><i class="fas fa-circle text-'.($user->update > time()-60*20 ? 'success' : 'danger').' small"></i> @'.$user->name.' </p>
-                                <footer class="blockquote-footer code">'.formatBranch($user->branch).'</footer>
+                                <p><i class="fas fa-circle text-'.($user->update > time()-60*20 ? 'success' : 'danger').' small"></i> <a class="text-dark" href="'.$user->url.'">@'.$user->name.'</a> </p>
+                                <footer class="blockquote-footer code"><a class="text-muted" href="https://github.com/'.$repo->full_name.'/tree/'.$branch.'">'.$branch.'</footer>
                               </blockquote>
                             </div>
                             <div class="card-footer text-muted small">

@@ -36,7 +36,7 @@
               <i class="fas fa-code-branch"></i> Repositories
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <?php foreach($_config->auth_repos as $repo) echo '<a class="dropdown-item" href="'.$repo.'">'.$repo.'</a>'; ?>
+              <?php foreach($_config->auth_repos as $repo) echo '<a class="dropdown-item" href="'.$repo.'"><i class="far fa-dot-circle"></i> '.$repo.'</a>'; ?>
             </div>
           </li>
           <li class="nav-item">
@@ -66,10 +66,12 @@
 
   <script>
 
+    var currentPage = '<?=$name;?>';
+
     function loadWorkflow(){
         var Cont = $("#workflow-loading");
         $.ajax({
-            url: "res/switch.php?name=<?=$name;?>", 
+            url: "res/switch.php?name="+currentPage, 
             error: function () {
               Cont.html("<p class='text-danger my-4 text-center'><i class='fas fa-times-circle'></i> Page cannot load. Retrying...</p>");
             },
@@ -83,7 +85,7 @@
     $(document).ready(function() {
       loadWorkflow();
       var inter = setInterval(
-        function() { loadWorkflow(); }, 30000); // every 30 seconds
+        function() { if(currentPage != 'updates') loadWorkflow(); }, 15000); // every 30 seconds
     });
 
   </script>
