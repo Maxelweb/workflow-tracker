@@ -43,17 +43,19 @@
             <a class="nav-link" href="updates"><i class="fas fa-sync-alt"></i> Updates</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?=$_config->home;?>">Back to home &rarr;</a>
+            <a class="nav-link" href="<?=$_config->home;?>"><i class="fas fa-arrow-alt-circle-right"></i> Back to Home</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container" id="workflow-loading"></div>
+  <div class="container" id="workflow-loading">
+    <p class="text-center my-4"><i class="fas fa-circle-notch fa-spin"></i> Loading...</p>
+  </div>
 
   <div class="container text-secondary text-center my-4 small">
-    <a class="text-info" href='<?=REPO;?>'>Workflow Tracker <?=VERSION;?></a> <i class="fas fa-code"></i> by Maxelweb
+    <a class="text-info" href='<?=REPO;?>'>Workflow Tracker <?=VERSION;?></a> <i class="mx-1 fas fa-code"></i> by Maxelweb
   </div>
 
 
@@ -67,7 +69,7 @@
     function loadWorkflow(){
         var Cont = $("#workflow-loading");
         $.ajax({
-            url: "res/workflow.php?name=<?=$name;?>", 
+            url: "res/switch.php?name=<?=$name;?>", 
             error: function () {
               Cont.html("<p class='text-danger my-4 text-center'><i class='fas fa-times-circle'></i> Page cannot load. Retrying...</p>");
             },

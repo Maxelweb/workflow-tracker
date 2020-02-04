@@ -13,5 +13,5 @@ $_config = (object) array(
 
 );
 
-require_once("core.php");
+require_once("utils/core.php");
 

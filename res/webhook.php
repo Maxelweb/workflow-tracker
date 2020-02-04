@@ -6,8 +6,8 @@ require_once 'config.php';
 
 // require_once 'github-handler.php';
 
-$payload = json_decode(file_get_contents("payload.json"), false);
-$data = json_decode(file_get_contents("data.json"), true);
+$payload = json_decode(file_get_contents("tests/payload.json"), false);
+$data = json_decode(file_get_contents("data/db.json"), true);
 
 if(!empty($data) && $data != null)
 {
