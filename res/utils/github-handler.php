@@ -7,8 +7,7 @@
  * @author  Miloslav Hůla (https://github.com/milo)
  */
 
-
-$hookSecret = null;
+$hookSecret = isset($_config) ? $_config->webhookSecret : null;
 
 
 set_error_handler(function($severity, $message, $file, $line) {
@@ -61,7 +60,9 @@ switch ($_SERVER['CONTENT_TYPE']) {
 
 # Payload structure depends on triggered event
 # https://developer.github.com/v3/activity/events/types/
+
 $payload = json_decode($json, false);
+
 
 switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 	case 'ping':

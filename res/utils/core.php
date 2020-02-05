@@ -1,5 +1,11 @@
 <?php
 
+/**
+ *  Core functions and classes
+ *  @author Maxelweb (marianosciacco.it)
+ *  @version 1.0
+ */
+
 function newRepo($payload)
 {
 	global $_config;
@@ -105,7 +111,7 @@ class Updates
 }
 
 
-define("VERSION", "1.0-rc");
+define("VERSION", "1.0");
 define("REPO", "https://github.com/Maxelweb/workflow-tracker");
 $name = isset($_GET['name']) ? $_GET['name'] : $_config->homepage_repo;
 

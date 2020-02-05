@@ -1,3 +1,13 @@
+<?php
+
+/**
+ *  Updates page
+ *  @author Maxelweb (marianosciacco.it)
+ *  @version 1.0
+ */
+
+?>
+
 	<h3 class="text-center text-secondary my-4"><i class='fas fa-sync-alt'></i> Updates</h3>
 	<p class="text-center my-2">
 	<?php 

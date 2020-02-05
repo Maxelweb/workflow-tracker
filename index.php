@@ -1,4 +1,11 @@
 <?php
+
+/**
+ *  Index page with async load
+ *  @author Maxelweb (marianosciacco.it)
+ *  @version 1.0
+ */
+
  require_once 'res/config.php';
 ?>
 
@@ -36,7 +43,8 @@
               <i class="fas fa-code-branch"></i> Repositories
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <?php foreach($_config->auth_repos as $repo) echo '<a class="dropdown-item" href="'.$repo.'"><i class="far fa-dot-circle"></i> '.$repo.'</a>'; ?>
+              <?php foreach($_config->auth_repos as $repo) 
+                      echo '<a class="dropdown-item" href="'.$repo.'"><i class="far fa-dot-circle"></i> '.$repo.'</a>'; ?>
             </div>
           </li>
           <li class="nav-item">
@@ -65,7 +73,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <script>
-
     var currentPage = '<?=$name;?>';
 
     function loadWorkflow(){
@@ -85,7 +92,7 @@
     $(document).ready(function() {
       loadWorkflow();
       var inter = setInterval(
-        function() { if(currentPage != 'updates') loadWorkflow(); }, 15000); // every 30 seconds
+        function() { if(currentPage != 'updates') loadWorkflow(); }, 20000); // every 20 seconds
     });
 
   </script>
