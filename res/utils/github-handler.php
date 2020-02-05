@@ -65,12 +65,14 @@ $payload = json_decode($json, false);
 
 switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 	case 'ping':
-		echo 'pong';
+		die('pong');
+
+	case 'push': // keep the code going
 		break;
 
 	default:
 		header('HTTP/1.0 404 Not Found');
 		echo "Event:$_SERVER[HTTP_X_GITHUB_EVENT] Payload:\n";
-		print_r($payload); # For debug only. Can be found in GitHub hook log.
+		// print_r($payload); # For debug only. Can be found in GitHub hook log.
 		die();
 }
