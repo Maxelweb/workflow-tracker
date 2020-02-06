@@ -17,7 +17,7 @@
 $_config = (object) array(
 
 	// IMAGE-URL for favicon and icon for the navbar 
-	"icon" => "#",
+	"icon" => "https://img.icons8.com/material-outlined/30/CCCCCC/workflow.png",
 	
 	// URL for the "back to home" navbar link
 	"home" => "#", 
