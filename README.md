@@ -6,7 +6,9 @@ A simple web-hook that shows a real-time branch workflow and the online status o
 
 ### Current version
 
-**Version:** 1.0
+**Version:** 1.0.1
+
+> Add Dockerfile and docker-compose configuration file. Use `docker-compose up -d` and `docker-compose down -v` to run the app through Docker.
 
 ### Description and Features
 
