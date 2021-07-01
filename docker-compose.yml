@@ -1,0 +1,13 @@
+
+version: '3'
+
+services:
+  workflow-tracker:
+    build: ./
+    container_name: workflow_tracker
+    restart: always
+    ports:
+      - "8080:80"
+      - "4430:443"
+    volumes: 
+      - ./:/var/www/html/
