@@ -15,6 +15,8 @@ if(!empty($name) && in_array($name, $_config->auth_repos))
 
   if(!empty($data))
   { 
+    if(!empty($data->repos))
+    {
       foreach($data->repos as $repo)
       {
           if($name == $repo->name)
@@ -51,6 +53,7 @@ if(!empty($name) && in_array($name, $_config->auth_repos))
               echo '</div>';
           }
       }
+    }
   }
 }
 
