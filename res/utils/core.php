@@ -111,7 +111,7 @@ class Updates
 }
 
 
-define("VERSION", "1.0.1");
+define("VERSION", "1.0.2");
 define("REPO", "https://github.com/Maxelweb/workflow-tracker");
 $name = isset($_GET['name']) ? $_GET['name'] : $_config->homepage_repo;
 

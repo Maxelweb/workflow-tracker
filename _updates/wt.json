@@ -1,6 +1,6 @@
 {
-	"version" : "1.0.1",
-	"date"	: "01-07-2021",
+	"version" : "1.0.2",
+	"date"	: "02-07-2021",
 	"status"  : "stable",
-	"description" : "Add Dockerfile and docker-compose for Docker support. Fixed a minor warning if data is empty."
+	"description" : "Fix Dockerfile and docker-compose permissions to write."
 }
